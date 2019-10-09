@@ -13,22 +13,22 @@ describe('HazyCalculator', () => {
     expect(calculate(calculationSteps)).to.equal(10)
   })
 
-  it('ignores undefined and empty string values and continues operation', () => {
+  xit('ignores undefined and empty string values and continues operation', () => {
     const calculationSteps = [, , '', 23, '-', , 12] // eslint-disable-line no-sparse-arrays
     expect(calculate(calculationSteps)).to.equal(11)
   })
 
-  it('can perform a complex operation with multiple steps', () => {
+  xit('can perform a complex operation with multiple steps', () => {
     const calculationSteps = [6, '/', '3', '*', 5]
     expect(calculate(calculationSteps)).to.equal(10)
   })
 
-  it('throws an error when the sequence has two operators in a row', () => {
+  xit('throws an error when the sequence has two operators in a row', () => {
     const calculationSteps = [6, '/', '+', 3]
     expect(() => calculate(calculationSteps)).to.throw('Invalid input!')
   })
 
-  it('throws an error when the sequence contains non-numeric and non-operator elements', () => {
+  xit('throws an error when the sequence contains non-numeric and non-operator elements', () => {
     const calculationSteps = [9, 'NINE', 9]
     expect(() => calculate(calculationSteps)).to.throw('Invalid input!')
   })

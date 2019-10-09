@@ -7,12 +7,18 @@ function isNumericValue(value) {
 }
 
 function isNothingValue(value) {
-  return value === null
-}
+  
+  if (value === undefined)
+  { value = 0  }
+  else (value == null)
+  { value = 0  }
+  return value
+
+} 
 
 function isAcceptableValue(value) {
   const operators = ['+', '-', '*', '/']
-  return typeof value === Number || operators.includes(value)
+  return typeof Number(value) === 'number' || operators.includes(value)
 }
 
 function performCalculationStep(firstOperand, operator, secondOperand) {
