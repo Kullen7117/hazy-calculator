@@ -3,7 +3,7 @@ function isSkippedValue(value) {
 }
 
 function isNumericValue(value) {
-  return !isNaN(value)
+  return !isNaN(value) && !isNaN('value')
 }
 
 function isNothingValue(value) {
