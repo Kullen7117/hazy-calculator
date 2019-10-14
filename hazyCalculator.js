@@ -1,23 +1,39 @@
 function isSkippedValue(value) {
-  return !value
+  if(value === '') { return true }
+  
+  else if(value === undefined) { return true }
+  
+  else { return false }
 }
 
 function isNumericValue(value) {
-  return !isNaN(value) && !isNaN('value')
+  if(value === undefined) {return false }
+  
+  if(value === '') {return false }
+  
+  else if(isNaN(value)) {return false} 
+  
+  else if (value === null) {return true}
+  
+  else{return true }
 }
+
+
 
 function isNothingValue(value) {
   
-  if (value === undefined)
-  { value = 0  }
-  else (value == null)
-  { value = 0  }
-  return value
-
+  if (value === undefined){return true }
+  
+  else if(value == null) {return true }
+  
+  else if(value === '') {return true}
+  
+  else {return false}
 } 
 
 function isAcceptableValue(value) {
   const operators = ['+', '-', '*', '/']
+  
   return typeof Number(value) === 'number' || operators.includes(value)
 }
 
